@@ -1,3 +1,6 @@
+console.log("probando");  
+  
+  
   let errors = {};
 
   const formu = document.getElementById("formulario");
@@ -124,3 +127,4 @@
   repassword.addEventListener("blur", repasswordValidator);
 
   rol.addEventListener("blur", rolValidator);
+
