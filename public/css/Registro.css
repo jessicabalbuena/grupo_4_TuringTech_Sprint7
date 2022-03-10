@@ -50,6 +50,7 @@
         color:var(--blanco-agua);
     }
     
+    /*
     .nombre::after{
         content: "El nombre y apellido no puede contener números ni caracteres que no sean letras. Ni contener el campo vacío";
     }
@@ -100,7 +101,7 @@
 
     .registroavatar::after{
         content: "El tipo de archivo que intenta subir no es válido o pesa más de 5 MBs.";
-    }
+    }*/ 
     
     .main__bluebox{
         background-color: var(--negro-intenso);

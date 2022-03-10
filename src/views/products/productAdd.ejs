@@ -18,6 +18,7 @@
           action="/productAdd/create"
           enctype="multipart/form-data"
           method="POST"
+          id="formularioProduct"
         >
           <div class="main__container-rol <%= locals.errors && errors.productCategory ? "productCategory" : null %>">
             <p>Categoria</p>
@@ -79,6 +80,7 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> El nombre tiene que tener al menos 4 caracteres y un maximo de 16 caracteres</p>
           </div>
 
           <div class="main__container-user <%= locals.errors && errors.productDescription ? "productDescription" : null %>">
@@ -101,6 +103,7 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> La descripción tiene que tener al menos 5 caracteres y un maximo de 20 caracteres </p>
           </div>
 
           <div class="main__container-user <%= locals.errors && errors.productDescriptionLong ? "productDescriptionLong" : null %>">
@@ -123,6 +126,7 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> La descripción tiene que tener al menos 10 caracteres y un maximo de 40 caracteres </p>
           </div>
 
           <div class="main__container-email <%= locals.errors && errors.productPrice ? "productPrice" : null %>">
@@ -145,6 +149,7 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> Debe tener al menos 2 numeros. No puede tener letras ni simbolos. </p>
           </div>
 
           <div class="main__container-lock <%= locals.errors && errors.productStock ? "productStock" : null %>">
@@ -167,6 +172,7 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> Debe tener al menos 1 numero. No puede tener letras ni simbolos. </p>
           </div>
 
           <div class="main__container-lock <%= locals.errors && errors.productFees ? "productFees" : null %>">
@@ -315,5 +321,7 @@
     <!-- footer-->
     <%- include("../partials/footer.ejs") %>
     <!-- fin footer-->
+
+    <script src="js/productAddValidation.js"> </script>
   </body>
 </html>

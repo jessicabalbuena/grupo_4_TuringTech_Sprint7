@@ -141,61 +141,73 @@
 
 /* Validaciones */
 
-.productCategory::after,.productBrand::after, .productName::after,.productDescription::after,.productDescriptionLong::after,.productPrice::after,.productStock::after,.productFees::after,.productDiscount::after,.imageProduct::after, .productVisibility::after, .productImportant::after{
+.productCategory::after,
+.productBrand::after,
+.productName::after,
+.productDescription::after,
+.productDescriptionLong::after,
+.productPrice::after,
+.productStock::after,
+.productFees::after,
+.productDiscount::after,
+.imageProduct::after,
+.productVisibility::after,
+.productImportant::after {
   width: 110%;
   display: block;
   margin: 1rem 0 0 0;
   font-size: calc(0.1rem + 1vw);
-  color:var(--blanco-agua);
+  color: var(--blanco-agua);
 }
-
-.productCategory::after{
+/*
+.productCategory::after {
   content: "La categoría no puede estar vacía";
 }
 
-.productBrand::after{
+.productBrand::after {
   content: "La marca no puede estar vacía";
 }
 
-.productName::after{
+.productName::after {
   content: "El nombre debe contener una longitud mínima de 5 caractéres y máxima de 20. No puede estar vacío";
 }
 
-.productDescription::after{
+.productDescription::after {
   content: "La descripción debe contener una longitud mínima de 5 caractéres y máxima de 20. No puede estar vacía";
 }
 
-.productDescriptionLong::after{
+.productDescriptionLong::after {
   content: "La descripción ampliada debe contener una longitud mínima de 5 caractéres y máxima de 40. No puede estar vacía.";
 }
 
-.productPrice::after{
+.productPrice::after {
   content: "El precio solo puede contener números y no puede estar vacío.";
 }
 
-.productStock::after{
+.productStock::after {
   content: "El stock debe contener solo números, en caso de no haber, colocar número 0.";
 }
 
-.productFees::after{
+.productFees::after {
   content: "El descuento no puede estar vacío, en caso de no tener, colocar númer 0.";
 }
 
-.productDiscount::after{
+.productDiscount::after {
   content: "El descuento no puede estar vacío";
 }
 
-.imageProduct::after{
+.imageProduct::after {
   content: "La imágen respectiva del producto, es obligatoria";
 }
 
-.productVisibility::after{
+.productVisibility::after {
   content: "La visibilidad no puede estar vacía";
 }
 
-.productImportant::after{
+.productImportant::after {
   content: "El elemento destacado no puede estar vacío";
 }
+ 
 
 /*móvil*/
 
@@ -343,4 +355,14 @@
     cursor: pointer;
     color: var(--violeta-fuego);
   }
+}
+
+.formulario__input-error {
+  color: #bb2929;
+  opacity: 1;
+}
+
+.formulario__input-correcto {
+  color: #1ed12d;
+  opacity: 1;
 }

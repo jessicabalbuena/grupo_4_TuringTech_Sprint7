@@ -1,126 +1,56 @@
-  let errors = {};
+console.log("probando");  
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input")
 
-  const formu = document.getElementById("formulario");
-  const firstName = document.getElementById("first_name");
-  const lastName = document.getElementById("last_name");
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
 
-  const email = document.getElementById("email");
-  const pass = document.getElementById("pass");
-  const repassword = document.getElementById("repassword");
-  const rol = document.getElementById("rol");
-
-  console.log(firstName)
-  // Declaro las Funciones
-
-  let firstNameValidator = () => {
-   // Declaro string vacio que contendra mensaje de error
-   let feedback = "";
-   // Almaceno elemento hermano(<p>) a input nombre, hay un p al final
-   let feedbackElement = firstName.nextElementSibling;
-
-   // Si el nombre no valida sobreescribo feedback
-   if (firstName.value.trim() == "") {
-       feedback = "El nombre no puede estar vacio"
-   }else if (firstName.value.length < 5) {
-       feedback = "El nombre no puede tener menos de 5 caracteres"
-   }
-
-   // Si existe error se almacena en objeto errors
-   if (feedback) {
-    firstName.classList.add('error-input');
-       errors.firstName = feedback;
-   }else {
-    firstName.classList.remove('error-input');
-       delete errors.firstName;
-   }
-
-   // Se imprime string de error en vista
-   // Utilizo el <p> hermano para publicar el error
-   //feedbackElement es el siguiente hermano, es decir el P
-   feedbackElement.innerText = feedback;
+const validarFormulario = (e) => {
+switch (e.target.name){
+	case "registroFullname":
+		console.log("funciona")
+	break;
+	case "registroUsuario":
+		console.log("funciona")
+	break;
+	case "registroEmail":
+		console.log("funciona")
+	break;
+	case "registroDni":
+		console.log("funciona")
+	break;
+	case "registroTel":
+		console.log("funciona")
+	break;
+	case "registroDir":
+		console.log("funciona")
+	break;
+	case "registroDepto":
+		console.log("funciona")
+	break;
+	case "registroPostal":
+		console.log("funciona")
+	break;
+	case "registroLock":
+		console.log("funciona")
+	break;
+	case "registroLockRepeat":
+		console.log("funciona")
+	break;
+  };
 }
 
 
+inputs.forEach((input) => {
+  input.addEventListener("keyup", validarFormulario);
+  input.addEventListener("blur", validarFormulario);
+});
 
-  let  lastNameValidator = () => {
- // Declaro string vacio que contendra mensaje de error
- let feedback = "";
- // Almaceno elemento hermano(<p>) a input nombre, hay un p al final
- let feedbackElement = lastName.nextElementSibling;
-
- // Si el nombre no valida sobreescribo feedback
- if (lastName .value.trim() == "") {
-     feedback = "El apellido no puede estar vacio"
- }else if (lastName.value.length < 5) {
-     feedback = "El apellido no puede tener menos de 5 caracteres"
- }
-
- // Si existe error se almacena en objeto errors
- if (feedback) {
-  lastName .classList.add('error-input');
-     errors.lastName  = feedback;
- }else {
-  lastName.classList.remove('error-input');
-     delete errors.lastName ;
- }
-
- // Se imprime string de error en vista
- // Utilizo el <p> hermano para publicar el error
- //feedbackElement es el siguiente hermano, es decir el P
- feedbackElement.innerText = feedback;
-}
-
-
-
-
-  let  emailValidator = () => {
-
-    //validando campo usuario
-  }
-
-  let  passValidator = () => {
-
-    //validando campo usuario
-  }
-
-
-  let  repasswordValidator = () => {
-
-
-    //validando campo usuario
-  }
-
-
-  let  rolValidator = () => {
-
-    //validando campo usuario
-  }
-
-  // Ejecuto los oyentes
-  // Llamo a las funciones
-
-
-  formu.addEventListener("submit", (e) => {
-
-    firstNameValidator();
-    lastNameValidator();
-
- // si existen errores prevent default
- if (Object.keys(errors).length) {
+formulario.addEventListener("submit", (e) => {
   e.preventDefault();
-} else {
-  alert(`Se cargó el nuevo registro`)
-}
-
-  });
-
-
-  // Si focus se sale del input se ejecuta funcion validacion
-  firstName.addEventListener("blur", firstNameValidator);
-  lastName.addEventListener("blur", lastNameValidator);
-
-  email.addEventListener("blur", emailValidator);
-  pass.addEventListener("blur", passValidator);
-  repassword.addEventListener("blur", repasswordValidator);
-
-  rol.addEventListener("blur", rolValidator);
+});
