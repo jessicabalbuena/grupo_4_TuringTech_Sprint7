@@ -148,7 +148,7 @@
   font-size: calc(0.1rem + 1vw);
   color:var(--blanco-agua);
 }
-
+/*
 .productCategory::after{
   content: "La categoría no puede estar vacía";
 }
@@ -196,6 +196,7 @@
 .productImportant::after{
   content: "El elemento destacado no puede estar vacío";
 }
+*/ 
 
 /*móvil*/
 
