@@ -51,7 +51,7 @@ const productController = {
           req.file.path.length,
         )
       } else {
-        sliced = 'default-incorrect.png'
+        sliced = 'productos-assets/default-incorrect.png'
       }
 
       db.Product.create({
@@ -97,7 +97,21 @@ const productController = {
         { association: 'discount' },
       ],
     }).then((productEdit) => {
-      return res.render('products/productEdit', { productEdit })
+      let brands = db.Brand.findAll(),
+        categories = db.Categorie.findAll(),
+        discounts = db.Discount.findAll()
+
+      Promise.all([brands, categories, discounts]).then(
+        ([brands, categories, discounts]) => {
+          return res.render('products/productEdit', {
+            brands,
+            categories,
+            discounts,
+            productEdit,
+            old: req.body,
+          })
+        },
+      )
     })
   },
   productPut: (req, res) => {
@@ -110,12 +124,12 @@ const productController = {
       }).then((product) => {
         let sliced
 
-        if (req.file && product.sliced !== 'default-incorrect.png') {
+        if (
+          req.file &&
+          product.sliced !== 'productos-assets/default-incorrect.png'
+        ) {
           fs.unlinkSync(
-            path.resolve(
-              __dirname,
-              `../../public/images/productos-assets/${product.sliced}`,
-            ),
+            path.resolve(__dirname, `../../public/images/${product.sliced}`),
           )
 
           sliced = req.file.path.slice(
@@ -177,7 +191,7 @@ const productController = {
         fs.unlinkSync(
           path.resolve(
             __dirname,
-            `../../public/images/productos-assets/${product.sliced}`,
+            `../../public/images/${product.sliced}`,
           ),
         )
       }
