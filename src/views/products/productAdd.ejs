@@ -15,9 +15,7 @@
         <h2 class="main__title-addProduct">Ingrese los nuevos productos</h2>
 
         <form
-          action="/productAdd/create"
-          enctype="multipart/form-data"
-          method="POST"
+          action="/productAdd/create" enctype="multipart/form-data" method="POST"
           id="formularioProduct"
         >
           <div class="main__container-rol <%= locals.errors && errors.productCategory ? "productCategory" : null %>">
@@ -312,6 +310,9 @@
             </div>
           </div>
 
+          <div class="formulario__mensaje" id="formulario__mensaje">
+            <p> <i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+          </div>
           <button type="submit" id="create-submit">Agregar</button>
         </form>
       </section>
