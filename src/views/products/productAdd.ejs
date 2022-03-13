@@ -239,45 +239,6 @@
             </div>
           </div>
 
-          <!--       <div class="main__container-avatar avatar">
-                    <p>Imagen 2</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage2" id="productImage2" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 3</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage3" id="productImage3" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 4</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage4" id="productImage4" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 5</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage5" id="productImage5" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div> -->
                 <!--Grupo: Visibilidad-->
           <div class="main__container-rol <%= locals.errors && errors.productVisibility ? "productVisibility" : null %>">
             <p>Visibilidad</p>
@@ -316,7 +277,12 @@
           <div class="formulario__mensaje" id="formulario__mensaje">
             <p> <i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
           </div>
+
+          
           <button type="submit" id="create-submit">Agregar</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"> ¡Se agrego el producto con exito!</p>
+        
+
         </form>
       </section>
     </main>
