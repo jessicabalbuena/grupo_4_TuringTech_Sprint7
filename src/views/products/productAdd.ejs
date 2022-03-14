@@ -15,10 +15,8 @@
         <h2 class="main__title-addProduct">Ingrese los nuevos productos</h2>
 
         <form
-          action="/productAdd/create"
-          enctype="multipart/form-data"
-          method="POST"
-          id="formularioProduct"
+          action="/productAdd/create" enctype="multipart/form-data" method="POST"
+          id="formulario"
         >
           <div class="main__container-rol <%= locals.errors && errors.productCategory ? "productCategory" : null %>">
             <p>Categoria</p>
@@ -59,8 +57,8 @@
               </select>
             </div>
           </div>
-
-          <div class="main__container-name <%= locals.errors && errors.productName ? "productName" : null %>">
+          <!--Grupo: Nombre-->
+          <div class="main__container-name <%= locals.errors && errors.productName ? "productName" : null %>" id="grupo__nombre">
             <p>Nombre</p>
             <div class="main__bluebox">
               <img
@@ -82,8 +80,8 @@
             </div>
             <p class="formulario__input-error"> El nombre tiene que tener al menos 4 caracteres y un maximo de 16 caracteres</p>
           </div>
-
-          <div class="main__container-user <%= locals.errors && errors.productDescription ? "productDescription" : null %>">
+          <!--Grupo: Descripcion-->
+          <div class="main__container-user <%= locals.errors && errors.productDescription ? "productDescription" : null %>" id= "grupo__descripcion">
             <p>Descripción</p>
             <div class="main__bluebox">
               <img
@@ -106,7 +104,8 @@
             <p class="formulario__input-error"> La descripción tiene que tener al menos 5 caracteres y un maximo de 20 caracteres </p>
           </div>
 
-          <div class="main__container-user <%= locals.errors && errors.productDescriptionLong ? "productDescriptionLong" : null %>">
+          <!--Grupo: Descripcion ampliada-->
+          <div class="main__container-user <%= locals.errors && errors.productDescription ? "productDescription" : null %>" id= "grupo__descripcionLong">
             <p>Descripción ampliada</p>
             <div class="main__bluebox">
               <img
@@ -129,7 +128,8 @@
             <p class="formulario__input-error"> La descripción tiene que tener al menos 10 caracteres y un maximo de 40 caracteres </p>
           </div>
 
-          <div class="main__container-email <%= locals.errors && errors.productPrice ? "productPrice" : null %>">
+          <!--Grupo: Precio-->
+          <div class="main__container-email <%= locals.errors && errors.productPrice ? "productPrice" : null %>" id="grupo__precio">
             <p>Precio</p>
             <div class="main__bluebox">
               <img
@@ -151,8 +151,8 @@
             </div>
             <p class="formulario__input-error"> Debe tener al menos 2 numeros. No puede tener letras ni simbolos. </p>
           </div>
-
-          <div class="main__container-lock <%= locals.errors && errors.productStock ? "productStock" : null %>">
+          <!--Grupo: Stock-->
+          <div class="main__container-lock <%= locals.errors && errors.productStock ? "productStock" : null %>" id="grupo__productStock">
             <p>Stock</p>
             <div class="main__bluebox">
               <img
@@ -174,8 +174,8 @@
             </div>
             <p class="formulario__input-error"> Debe tener al menos 1 numero. No puede tener letras ni simbolos. </p>
           </div>
-
-          <div class="main__container-lock <%= locals.errors && errors.productFees ? "productFees" : null %>">
+          <!--Grupo: Cuotas-->
+          <div class="main__container-lock <%= locals.errors && errors.productFees ? "productFees" : null %>" id="grupo__productFees">
             <p>Cuotas</p>
             <div class="main__bluebox">
               <img
@@ -195,8 +195,9 @@
                 oninvalid="this.setCustomValidity(' ')"
               />
             </div>
+            <p class="formulario__input-error"> Debe colocar el numero de cuotas. No puede tener letras ni simbolos. </p>
           </div>
-
+          <!--Grupo: Descuento-->
           <div class="main__container-lock <%= locals.errors && errors.productDiscount ? "productDiscount" : null %>">
             <p>Descuento</p>
             <div class="main__bluebox">
@@ -216,7 +217,7 @@
               </select>
             </div>
           </div>
-
+          <!--Grupo: Imagen-->
           <div class="main__container-avatar <%= locals.errors && errors.imageProduct ? "imageProduct" : null %>">
             <p>Imágen de producto</p>
             <div class="main__bluebox">
@@ -238,46 +239,7 @@
             </div>
           </div>
 
-          <!--       <div class="main__container-avatar avatar">
-                    <p>Imagen 2</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage2" id="productImage2" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 3</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage3" id="productImage3" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 4</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage4" id="productImage4" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div>
-
-                <div class="main__container-avatar avatar">
-                    <p>Imagen 5</p>
-                    <div class="main__bluebox"><img src="/images/productAdd-assets/file-image-solid.svg" alt="avatar-registro"
-                            id="main__register-avatar"></div>
-                    <div class="main__register">
-                        <input type="file" name="productImage5" id="productImage5" placeholder="Foto producto"
-                            class="main__register-avatar" oninvalid="this.setCustomValidity(' ')">
-                    </div>
-                </div> -->
-
+                <!--Grupo: Visibilidad-->
           <div class="main__container-rol <%= locals.errors && errors.productVisibility ? "productVisibility" : null %>">
             <p>Visibilidad</p>
             <div class="main__bluebox">
@@ -294,7 +256,7 @@
               </select>
             </div>
           </div>
-
+          <!--Grupo: Destacado en Home-->
           <div class="main__container-rol <%= locals.errors && errors.productImportant ? "productImportant" : null %>">
             <p>Destacado en Home</p>
             <div class="main__bluebox">
@@ -312,7 +274,15 @@
             </div>
           </div>
 
+          <div class="formulario__mensaje" id="formulario__mensaje">
+            <p> <i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+          </div>
+
+          
           <button type="submit" id="create-submit">Agregar</button>
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"> ¡Se agrego el producto con exito!</p>
+        
+
         </form>
       </section>
     </main>

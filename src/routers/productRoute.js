@@ -17,7 +17,7 @@ const validationScheme = [
     body("productStock").notEmpty().isNumeric(),
     body("productFees").notEmpty().isNumeric(),
     body("productDiscount").notEmpty(),
-    body("imageProduct").notEmpty(),
+    //body("imageProduct").optional({nullable:true,checkFalsy:true}),
     body("productVisibility").notEmpty(),
     body("productImportant").notEmpty()
   ];
