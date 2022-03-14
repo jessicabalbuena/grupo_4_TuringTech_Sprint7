@@ -20,9 +20,11 @@
                 <section class="main-addProduct-container">
 
                     <h2 class="main__title-addProduct">Edite el producto</h2>
-
+                    <div class="errores">
+                        <ul></ul>
+                    </div>
                     <form action="/productEdit/<%= productEdit.id %>?_method=PUT" enctype="multipart/form-data"
-                        method="POST">
+                        method="POST" class="edit">
 
                         <!--  <div class="main__container-rol rol">
                 <p>Producto a editar</p>
@@ -233,6 +235,7 @@
             <!-- footer-->
             <%- include("../partials/footer.ejs") %>
                 <!-- fin footer-->
+            <script src="js/productEditValidation.js"></script>
     </body>
 
 </html>
