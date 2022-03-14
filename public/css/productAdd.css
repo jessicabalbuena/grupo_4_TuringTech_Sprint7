@@ -159,7 +159,7 @@
   font-size: calc(0.1rem + 1vw);
   color: var(--blanco-agua);
 }
-/*
+
 .productCategory::after {
   content: "La categoría no puede estar vacía";
 }
