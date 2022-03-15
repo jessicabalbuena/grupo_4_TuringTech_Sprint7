@@ -1,5 +1,6 @@
 const express = require("express"),
-  router = express.Router();
+  router = express.Router()
+
 // Solicito todas las funcionalidades del userController
 const userController = require("../controllers/userController");
 
@@ -11,7 +12,7 @@ const { body } = require("express-validator");
 
 //Require de middlewares de aplicación para el control del comportamiento del usuario
 const authMiddleware = require("../middlewares/authMiddleware")
-const guestMiddleware = require("../middlewares/guestMiddleware")
+const guestMiddleware = require("../middlewares/guestMiddleware");
 
 const validationScheme = [
   body("registroFullname").notEmpty().isString(),
@@ -24,10 +25,15 @@ const validationScheme = [
   body("registroPostal").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}),
   body("registroLocality").notEmpty().isString().isLength({min:1, max:30}),
   body("registroProvince").notEmpty().isString().isLength({min:1, max:30}),
-  body("registroLock").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}),
-  body("registroLockRepeat").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}),
-  body("registroAvatar").optional(),
+  body("registroLock").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}).isLength({min:8, max:30}),
+  body("registroLockRepeat").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}).isLength({min:8, max:30}),
+  body("registroAvatar").optional({nullable: true, checkFalsy: true}),
   body("registroRol").notEmpty(),
+];
+
+const validationSchemeLogin = [
+  body("userEmail").notEmpty().isEmail(),
+  body("userLock").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'})
 ];
 
 /* Con readAll - LISTADO DE PRODUCTOS, RENDERIZA CATALOGO DE PRODUCTOS*/
@@ -36,7 +42,7 @@ router.get("/ayuda", userController.ayuda);
 
 //Login
 router.get('/login', guestMiddleware,userController.loginGet);
-router.post("/login", userController.loginPost);
+router.post("/login", validationSchemeLogin,userController.loginPost);
 
 //Logout
 router.get("/out",userController.logout)
@@ -51,8 +57,5 @@ router.get("/restablecer", userController.restablecer);
 //pageProfile
 router.get('/pageProfile', authMiddleware,userController.pageProfile );
 router.put('/pageProfile',uploadUsers.single("imageUser"),userController.pageProfilePost );
-
-/* Con readDetail - LEE PRODUCTO SEGUN ID */
-//router.get('/detalle/:menuId', productController.readDetail);
 
 module.exports = router;

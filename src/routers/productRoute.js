@@ -1,6 +1,5 @@
 const express = require('express'),
       router = express.Router(),
-      multer = require("multer"),
       {body} = require("express-validator");
 // Solicito todas las funcionalidades del productController
 const productController = require('../controllers/productController');
@@ -8,7 +7,22 @@ const productController = require('../controllers/productController');
 //Require de middlewares de ruta
 const uploadProducts = require("../middlewares/multerProductsMiddleware")
 
-/* Con readAll - LISTADO DE PRODUCTOS, RENDERIZA CATALOGO DE PRODUCTOS*/
+const validationScheme = [
+    body("productCategory").notEmpty(),
+    body("productBrand").notEmpty(),
+    body("productName").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}).isLength({min:5, max:20}),
+    body("productDescription").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}).isLength({min:5, max:20}),
+    body("productDescriptionLong").notEmpty().isAlphanumeric('es-ES',{ignore:'\s'}).isLength({min:5, max:40}),
+    body("productPrice").notEmpty().isNumeric(),
+    body("productStock").notEmpty().isNumeric(),
+    body("productFees").notEmpty().isNumeric(),
+    body("productDiscount").notEmpty(),
+    //body("imageProduct").optional({nullable:true,checkFalsy:true}),
+    body("productVisibility").notEmpty(),
+    body("productImportant").notEmpty()
+  ];
+
+//Index Alt
 router.get('/', productController.index);
 
 //Index
@@ -16,7 +30,7 @@ router.get('/index', productController.index);
 
 //Creación de nuevo producto
 router.get('/productAdd', productController.productAddGet);
-router.post('/productAdd/create',uploadProducts.single("imageProduct") ,productController.productAddPost);
+router.post('/productAdd/create',uploadProducts.single("imageProduct") ,validationScheme,productController.productAddPost);
 
 //Detalle de producto
 router.get('/productDetail/:id', productController.productDetail);
@@ -29,7 +43,7 @@ router.get('/products', productController.productos);
 
 //Edición de producto
 router.get('/productEdit/:id', productController.productEdit);
-router.put("/productEdit/:id", uploadProducts.single("imageProduct"),productController.productPut)
+router.put("/productEdit/:id", uploadProducts.single("imageProduct"),validationScheme,productController.productPut)
 
 //Borrado de producto
 router.delete("/productDetail/:id", productController.productDelete)
@@ -39,9 +53,5 @@ router.get("/products/:productCategory",productController.productCategory)
 
 //Búsqueda/Barra de navegación
 router.get("/results",productController.search)
-
-
-/* Con readDetail - LEE PRODUCTO SEGUN ID */
-//router.get('/detalle/:menuId', productController.readDetail);
 
 module.exports = router;

@@ -12,7 +12,7 @@
 
 .contenedor-sesion {
   background-color: var(--rojo-fuego);
-  height: 250px;
+  height: 100%;
   width: 500px;
   display: flex;
   padding: 1rem;
@@ -89,9 +89,8 @@
 }
 .form-sesion {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   flex-direction: column;
+  width: 100%;
 }
 
 #remember{
@@ -109,7 +108,7 @@
   display: flex;
   margin-top:1rem;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .boton-iniciar {
@@ -120,6 +119,7 @@
   height: 4rem;
   border-radius: 1rem;
   border: 1px solid var(--negro-intenso);
+  align-self: center;
   font-size: 2.5rem;
 }
 
@@ -177,6 +177,30 @@
 
 #recordar-usuario{
   font-size: 2.5rem;
+}
+
+.emailLogin::after,.contraseniaLogin::after{
+  width: 100%;
+  display: block;
+  margin: 1rem 0 0 0;
+  font-size: calc(0.1rem + 1vw);
+  color:var(--blanco-agua);
+}
+
+.emailLogin::after{
+  content: "El email ingresado no es válido, esta vacío o no existe en nuestra base de datos";
+}
+
+.contraseniaLogin::after{
+  content: "La contraseña ingresada no es válida, esta vacía o no existe en nuestra base de datos";
+}
+
+.errorLogin{
+  width: 100%;
+  display: block;
+  margin: 1rem 0 0 0;
+  font-size: calc(0.1rem + 1vw);
+  color:var(--blanco-agua);
 }
 
 /*Tablet - netbook*/

@@ -139,6 +139,76 @@
   color: var(--violeta-fuego);
 }
 
+/* Validaciones */
+
+.productCategory::after,
+.productBrand::after,
+.productName::after,
+.productDescription::after,
+.productDescriptionLong::after,
+.productPrice::after,
+.productStock::after,
+.productFees::after,
+.productDiscount::after,
+.imageProduct::after,
+.productVisibility::after,
+.productImportant::after {
+  width: 110%;
+  display: block;
+  margin: 1rem 0 0 0;
+  font-size: calc(0.1rem + 1vw);
+  color: var(--blanco-agua);
+}
+/*
+.productCategory::after {
+  content: "La categoría no puede estar vacía";
+}
+
+.productBrand::after {
+  content: "La marca no puede estar vacía";
+}
+
+.productName::after {
+  content: "El nombre debe contener una longitud mínima de 5 caractéres y máxima de 20. No puede estar vacío";
+}
+
+.productDescription::after {
+  content: "La descripción debe contener una longitud mínima de 5 caractéres y máxima de 20. No puede estar vacía";
+}
+
+.productDescriptionLong::after {
+  content: "La descripción ampliada debe contener una longitud mínima de 5 caractéres y máxima de 40. No puede estar vacía.";
+}
+
+.productPrice::after {
+  content: "El precio solo puede contener números y no puede estar vacío.";
+}
+
+.productStock::after {
+  content: "El stock debe contener solo números, en caso de no haber, colocar número 0.";
+}
+
+.productFees::after {
+  content: "El descuento no puede estar vacío, en caso de no tener, colocar númer 0.";
+}
+
+.productDiscount::after {
+  content: "El descuento no puede estar vacío";
+}
+
+.imageProduct::after {
+  content: "La imágen respectiva del producto, es obligatoria";
+}
+
+.productVisibility::after {
+  content: "La visibilidad no puede estar vacía";
+}
+
+.productImportant::after {
+  content: "El elemento destacado no puede estar vacío";
+}
+ 
+
 /*móvil*/
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
@@ -285,4 +355,45 @@
     cursor: pointer;
     color: var(--violeta-fuego);
   }
+}
+
+.formulario__input-error {
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #fff;
+  background-color: red;
+  opacity: 1;
+  display: none;
+}
+
+.formulario__input-error-activo {
+  display: block;
+}
+
+.formulario__mensaje-exito {
+  font-size: 15px;
+  background-color: #119200;
+  display: none;
+}
+
+.formulario__mensaje-exito-activo {
+  display: block;
+}
+
+.formulario__mensaje {
+  height: 35px;
+  line-height: 35px;
+  background: #f32727;
+  width: 50%;
+  padding: 0 15px;
+  border-radius: 3px;
+  display: none;
+}
+
+.formulario__mensaje-activo {
+  display: block;
+}
+
+.formulario__mensaje b {
+  font-size: 20px;
 }

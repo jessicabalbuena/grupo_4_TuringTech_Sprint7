@@ -42,7 +42,7 @@
         margin:0 0 3rem 0;
     }
     
-    .nombre::after,.usuario::after, .email::after,.dni::after,.tel::after,.dir::after,.depto::after,.postal::after,.locality::after,.province::after, .contrasenia::after, .contraseniarepeat::after,.avatar::after,.rol::after{
+    .nombre::after,.usuario::after, .email::after,.dni::after,.tel::after,.dir::after,.depto::after,.postal::after,.locality::after,.province::after, .contrasenia::after, .contraseniarepeat::after,.avatar::after,.rol::after,.registroavatar::after{
         width: 110%;
         display: block;
         margin: 1rem 0 0 0;
@@ -50,6 +50,7 @@
         color:var(--blanco-agua);
     }
     
+    /*
     .nombre::after{
         content: "El nombre y apellido no puede contener números ni caracteres que no sean letras. Ni contener el campo vacío";
     }
@@ -91,12 +92,16 @@
     }
     
     .contrasenia::after{
-        content: "Su contraseña obligatoriamente no puede estar vacía, debe contener al menos una letra mayúscula, un número y cualquier tipo de guión.";
+        content: "Su contraseña obligatoriamente no puede estar vacía y debe tener una longitud mínima de 8 caractéres.";
     }
     
     .contraseniarepeat::after{
         content: "La contraseña de confirmación ingresada no coincide o es inexistente.";
     }
+
+    .registroavatar::after{
+        content: "El tipo de archivo que intenta subir no es válido o pesa más de 5 MBs.";
+    }*/ 
     
     .main__bluebox{
         background-color: var(--negro-intenso);
