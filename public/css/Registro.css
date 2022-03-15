@@ -50,8 +50,41 @@
         color:var(--blanco-agua);
     }
     
-    /*
+
+    .formulario__validacion-estado {
+        position: absolute;
+        right: 10px;
+        bottom: 15px;
+        z-index: 100;
+        font-size: 16px;
+        opacity: 0;
+    }
+
+    .parrafo_error{
+        display: none;
+        font-size: 12px;
+        margin: 5px;
+        font-weight: 800;
+        text-align: center;
+    }
+    .error_activo{
+        display: block;
+    }
+
+    .borde_correcto_activo{
+        border: 2px solid green;
+    }
+
+    .borde_incorrecto_activo{
+        border: 2px solid red;
+    }
+    
+
+    
     .nombre::after{
+        content: "El nombre y apellido no puede contener números ni caracteres que no sean letras. Ni contener el campo vacío";
+    }
+    .nombre{
         content: "El nombre y apellido no puede contener números ni caracteres que no sean letras. Ni contener el campo vacío";
     }
     
@@ -101,7 +134,7 @@
 
     .registroavatar::after{
         content: "El tipo de archivo que intenta subir no es válido o pesa más de 5 MBs.";
-    }*/ 
+    }
     
     .main__bluebox{
         background-color: var(--negro-intenso);

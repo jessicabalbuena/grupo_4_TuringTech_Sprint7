@@ -62,7 +62,7 @@
 .main__container-name-nombre input {
   background-color: var(--blanco-agua);
   margin-top: 10px;
-  border: 1px solid var(--negro-intenso);
+  /*border: 1px solid var(--negro-intenso);*/
   width: 300px;
   height: 35px;
   font-size: 2.5rem;
@@ -91,6 +91,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
 }
 
 #remember{
@@ -158,6 +159,28 @@
   text-shadow: 0 0 4px var(--violeta-fuego), 0 0 8px var(--violeta-fuego);
   cursor: pointer;
 }
+
+.parrafo_error{
+  display: none;
+  font-size: 12px;
+  margin: 5px;
+  font-weight: 800;
+  text-align: center;
+}
+.error_activo{
+  display: block;
+}
+
+.borde_correcto_activo{
+  border: 2px solid green ;
+}
+
+.borde_incorrecto_activo{
+  border: 2px solid red ;
+}
+
+
+
 
 .recordar-usuario{
   background-color: rgba(0, 0, 0, 0.445);
