@@ -25,13 +25,15 @@
 
           <div class="contenedor-sesion">
             <h1 style="color:#D7E1F7;font-size: 2.5rem;margin:1rem;">INICIAR SESIÓN</h1>
-            <form class="form-sesion" action="/login" method="POST">
+            <form class="form-sesion" action="/login" method="POST" id="formulario-login">
               <div class="errorLogin"><%= locals.errorLogin ? locals.errorLogin : "" %></div>
               <div class="main__container-name-nombre <%= locals.errors && errors.userEmail ? "emailLogin" : null %>">
-                <input type="text" name="userEmail" id="userEmail" placeholder="Email"/>
+                <input type="text" name="user-Email" id="userMail" placeholder="Email"/>
+                <p class="parrafo_error" id="p_error1">Correo electrónico incorrecto</p>
               </div>
               <div class="main__container-name-nombre <%= locals.errors && errors.userLock ? "contraseniaLogin" : null %>">
-                <input type="password" name="userLock" id="userLock" placeholder="Contraseña"/>
+                <input type="password" name="user-Lock" id="userPass" placeholder="Contraseña"/>
+                <p class="parrafo_error" id="p_error2" >Contraseña incorrecta</p>                
               </div>
               <div class="main__container-remember">
                 <input type="checkbox" name="remember" id="remember">
@@ -47,6 +49,8 @@
 
       <%- include("../partials/footer.ejs") %>
 
+
+      <script src="js/loginValidation.js"> </script>
   </body>
 
 </html>
