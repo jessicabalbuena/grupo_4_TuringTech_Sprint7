@@ -28,11 +28,11 @@
             <form class="form-sesion" action="/login" method="POST" id="formulario-login">
               <div class="errorLogin"><%= locals.errorLogin ? locals.errorLogin : "" %></div>
               <div class="main__container-name-nombre <%= locals.errors && errors.userEmail ? "emailLogin" : null %>">
-                <input type="text" name="user-Email" id="userMail" placeholder="Email"/>
+                <input type="text" name="userEmail" id="userMail" placeholder="Email"/>
                 <p class="parrafo_error" id="p_error1">Correo electrónico incorrecto</p>
               </div>
               <div class="main__container-name-nombre <%= locals.errors && errors.userLock ? "contraseniaLogin" : null %>">
-                <input type="password" name="user-Lock" id="userPass" placeholder="Contraseña"/>
+                <input type="password" name="userLock" id="userPass" placeholder="Contraseña"/>
                 <p class="parrafo_error" id="p_error2" >Contraseña incorrecta</p>                
               </div>
               <div class="main__container-remember">

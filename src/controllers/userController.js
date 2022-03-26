@@ -1,8 +1,8 @@
 const db = require('../database/models'),
   { validationResult } = require('express-validator'),
   bcryptjs = require('bcryptjs'),
-  fs = require("fs"),
-  path = require("path")
+  fs = require('fs'),
+  path = require('path')
 
 const userController = {
   ayuda: (req, res) => {
@@ -42,6 +42,7 @@ const userController = {
         user_lockrepeat: bcryptjs.hashSync(req.body.registroLockRepeat, 10),
         imageUser: image,
         rol_id: req.body.registroRol,
+        administrator: false,
       })
 
       db.Adress.create({
@@ -79,6 +80,7 @@ const userController = {
   },
   loginPost: (req, res) => {
     let errors = validationResult(req)
+    console.log(errors)
     if (errors.isEmpty()) {
       db.User.findOne({
         where: {
@@ -152,7 +154,10 @@ const userController = {
 
     if (req.file) {
       image = req.file.filename
-      if (req.session.userLogged && req.session.userLogged.imageUser !== "default-image.png") {
+      if (
+        req.session.userLogged &&
+        req.session.userLogged.imageUser !== 'default-image.png'
+      ) {
         fs.unlinkSync(
           path.resolve(
             __dirname,
