@@ -58,6 +58,8 @@
                             <div class="main__product-add-container">
                                 <button class="main__product-add-button" type="submit">Sumar al carrito</button>
                             </div>
+
+                            <% if(locals.userLogged && locals.userLogged.administrator === true){ %> 
                             <a href="/productEdit/<%= productDetail.id %> ">
                                 <div class="main__product-edit-container">
                                     <button class="main__product-edit-button" type="button">Editar</button>
@@ -69,6 +71,7 @@
                                     <button class="main__product-delete-button" type="submit"> Borrar </button>
                                 </div>
                             </form>
+                            <% } %> 
 
                         </div>
 
