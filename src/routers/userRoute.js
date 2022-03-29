@@ -58,4 +58,7 @@ router.get("/restablecer", userController.restablecer);
 router.get('/pageProfile', authMiddleware,userController.pageProfile );
 router.put('/pageProfile',uploadUsers.single("imageUser"),userController.pageProfilePost );
 
+//presentacion
+router.get('/presentacion',userController.presentacion);
+
 module.exports = router;

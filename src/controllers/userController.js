@@ -77,6 +77,7 @@ const userController = {
   loginGet: (req, res) => {
     res.render('users/login')
   },
+
   loginPost: (req, res) => {
     let errors = validationResult(req)
     if (errors.isEmpty()) {
@@ -204,6 +205,9 @@ const userController = {
       res.redirect('/pageProfile')
     })
   },
+  presentacion: (req, res) => {
+    res.render('users/presentacion')
+  }
 }
 
 module.exports = userController
