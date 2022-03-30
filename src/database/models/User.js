@@ -36,6 +36,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         imageUser: {
             type:dataTypes.STRING
+        },
+        administrator: {
+            type: dataTypes.BOOLEAN
         }
     }
     let config = {
