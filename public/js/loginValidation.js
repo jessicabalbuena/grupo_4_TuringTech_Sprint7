@@ -18,7 +18,7 @@ let errores = [];
 
 const validarFormulario = (e) => {
     switch (e.target.name){
-        case "user-Email":
+        case "userEmail":
             
             if (expresiones.correo.test(e.target.value)) {
                     
@@ -38,7 +38,7 @@ const validarFormulario = (e) => {
                 
             }
         break;
-        case "user-Lock":
+        case "userLock":
             
             if (expresiones.password.test(e.target.value)) {
                     

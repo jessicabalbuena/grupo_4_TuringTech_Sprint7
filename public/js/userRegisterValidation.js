@@ -175,7 +175,7 @@ switch (e.target.name){
 	break;
 	case "registroLockRepeat":
 		console.log("funciona")
-		if (expresiones.nombre.test(e.target.value)) {
+		if (expresiones.password.test(e.target.value)) {
 				
 			document.getElementById("p_error10").classList.remove("error_activo")
 			document.getElementById("registroLockRepeat").classList.add("borde_correcto_activo")

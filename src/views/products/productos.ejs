@@ -134,11 +134,13 @@
           </a>
         </div>
 
-        <a href="/productAdd"
-          ><button type="submit" id="createProduct-submit">
-            Agregar Producto
-          </button></a
-        >
+        <% if(locals.userLogged && locals.userLogged.administrator === true){ %> 
+          <a href="/productAdd">
+            <button type="submit" id="createProduct-submit">
+              Agregar Producto
+            </button>
+          </a>
+        <% } %> 
 
         <div class="destacados">
           <div class="destacadosorden">
