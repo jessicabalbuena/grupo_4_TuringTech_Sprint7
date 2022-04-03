@@ -23,7 +23,7 @@ const campos = {
 const validarFormulario = (e) => {
   switch (e.target.name) {
     case "productName":
-      if (expresiones.usuario.test(e.target.value)) {
+      if (expresiones.productName.test(e.target.value)) {
         document
           .querySelector("#grupo__nombre .formulario__input-error")
           .classList.remove("formulario__input-error-activo");
@@ -64,7 +64,7 @@ const validarFormulario = (e) => {
       }
       break;
 
-   /* *case "productPrice":
+    /* *case "productPrice":
       if (expresiones.productPrice.test(e.target.value)) {
         document
           .querySelector("#grupo__productPrice .formulario__input-error")
@@ -76,7 +76,7 @@ const validarFormulario = (e) => {
           .classList.add("formulario__input-error-activo");
         campos["productPrice"] = true;
       }
-      break;*//
+      break;*/
 
     case "productStock":
       if (expresiones.productStock.test(e.target.value)) {
@@ -121,11 +121,10 @@ formulario.addEventListener("submit", (e) => {
     campos.productName &&
     campos.productDescription &&
     campos.productDescriptionLong &&
-    campos.productPrice &&
     campos.productStock &&
     campos.productFees
   ) {
-    formulario.reset();
+    formulario.submit();
     document
       .getElementById("formulario__mensaje-exito")
       .classList.add("formulario__mensaje-exito-activo");

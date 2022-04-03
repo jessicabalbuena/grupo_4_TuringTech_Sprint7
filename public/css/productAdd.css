@@ -207,7 +207,6 @@
 .productImportant::after {
   content: "El elemento destacado no puede estar vacío";
 }
- 
 
 /*móvil*/
 
@@ -360,8 +359,9 @@
 .formulario__input-error {
   font-size: 12px;
   margin-bottom: 0;
+  font-weight: 800;
+  text-align: center;
   color: #fff;
-  background-color: red;
   opacity: 1;
   display: none;
 }
@@ -383,7 +383,9 @@
 .formulario__mensaje {
   height: 35px;
   line-height: 35px;
-  background: #f32727;
+  font-weight: 800;
+  font-size: 12px;
+  text-align: center;
   width: 50%;
   padding: 0 15px;
   border-radius: 3px;
