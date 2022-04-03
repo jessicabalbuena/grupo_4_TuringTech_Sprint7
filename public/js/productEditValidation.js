@@ -1,4 +1,4 @@
-// window.addEventListener('load', function(){
+/* // window.addEventListener('load', function(){
 //     let formulario = document.getElementById('form-editt');
 
 //     formulario.addEventListener('submit', function(e){
@@ -342,3 +342,4 @@ formulario.addEventListener("submit", function (e) {
       .classList.add("form__mensaje-activo");
   }
 });
+ */
